@@ -23,6 +23,8 @@ repositories {
 }
 
 dependencies {
+    implementation 'com.github.penggle:kaptcha:latest.release'
+    implementation "org.springframework.boot:spring-boot-starter:latest.release"
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
