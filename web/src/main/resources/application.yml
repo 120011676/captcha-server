@@ -1,0 +1,21 @@
+spring:
+  redis:
+    host: 111.9.116.141
+    port: 6379
+    database: 3
+    password: iiottest
+    timeout: 5s
+captcha:
+  kaptcha:
+    kaptcha.border: "no"
+    kaptcha.background.clear.from: 238,237,230
+    kaptcha.background.clear.to: 238,237,230
+    kaptcha.textproducer.font.color: black
+    kaptcha.noise.color: black
+    kaptcha.noise.impl: com.google.code.kaptcha.impl.DefaultNoise
+    kaptcha.obscurificator.impl: com.google.code.kaptcha.impl.WaterRipple
+    kaptcha.image.width: 250
+    kaptcha.image.height: 90
+    kaptcha.textproducer.font.size: 70
+    kaptcha.textproducer.char.length: 4
+    kaptcha.textproducer.font.names: 宋体,楷体,微软雅黑

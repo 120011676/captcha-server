@@ -1,45 +1,24 @@
 plugins {
-    id 'org.springframework.boot' version '2.2.1.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
-    id 'java'
+    id "base"
 }
 
-group = 'com.github.120011676'
-version = '0.0.1'
-sourceCompatibility = '13'
+description = 'captcha server'
 
-configurations {
-    developmentOnly
-    runtimeClasspath {
-        extendsFrom developmentOnly
+allprojects {
+    group = 'com.github.120011676'
+    version = '0.0.1'
+
+    repositories {
+        mavenCentral()
     }
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-}
 
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation 'com.github.penggle:kaptcha:latest.release'
-    implementation "org.springframework.boot:spring-boot-starter:latest.release"
-    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    compileOnly 'org.projectlombok:lombok'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-    annotationProcessor 'org.projectlombok:lombok'
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
     }
 }
 
-test {
-    useJUnitPlatform()
-}
+subprojects {
+    apply plugin: 'java-library'
 
-tasks.withType(JavaCompile) {
-    options.encoding = "UTF-8"
+    sourceCompatibility = 13
 }
