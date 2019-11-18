@@ -1,0 +1,7 @@
+spring:
+  redis:
+    host: 111.9.116.141
+    port: 6379
+    database: 3
+    password: iiottest
+    timeout: 5s
