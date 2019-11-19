@@ -6,6 +6,7 @@ spring:
     password: iiottest
     timeout: 5s
 captcha:
+  timeout: 5m
   kaptcha:
     kaptcha.border: "no"
     kaptcha.background.clear.from: 238,237,230
@@ -19,3 +20,21 @@ captcha:
     kaptcha.textproducer.font.size: 70
     kaptcha.textproducer.char.length: 4
     kaptcha.textproducer.font.names: 宋体,楷体,微软雅黑
+ladybird:
+  restful-exception:
+    messages:
+      key_null_error:
+        httpStatus: 400
+        message: key不能为空
+      text_null_error:
+        httpStatus: 400
+        message: 验证码不能为空
+      text_timeout_error:
+        httpStatus: 400
+        message: 验证码超时
+      text_error:
+        httpStatus: 400
+        message: 验证码不一致
+      text_not_found:
+        httpStatus: 400
+        message: 验证码未找到

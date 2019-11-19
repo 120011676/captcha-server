@@ -18,6 +18,10 @@ configurations {
 
 dependencies {
     implementation project(":kaptcha-spring-boot-starter")
+    compileOnly project(":kaptcha-spring-boot-autoconfigure")
+    implementation project(":captcha-spring-boot-starter")
+    compileOnly project(":captcha-spring-boot-autoconfigure")
+    implementation 'com.github.120011676:ladybird-spring-boot-web-helper:latest.release'
     implementation 'com.github.penggle:kaptcha:latest.release'
     implementation "org.springframework.boot:spring-boot-starter:latest.release"
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'

@@ -3,4 +3,6 @@ rootProject.name = 'captcha-server'
 include(':web')
 include 'kaptcha-spring-boot-autoconfigure'
 include 'kaptcha-spring-boot-starter'
+include 'captcha-spring-boot-autoconfigure'
+include 'captcha-spring-boot-starter'
 
