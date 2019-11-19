@@ -1,0 +1,3 @@
+dependencies {
+    implementation project(":captcha-spring-boot-autoconfigure")
+}

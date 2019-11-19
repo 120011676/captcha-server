@@ -11,13 +11,13 @@ import org.springframework.stereotype.Service;
 @Service
 @CacheConfig(cacheNames = "captcha")
 public class CaptchaServiceImpl implements CaptchaService {
-    @CachePut(key = "#key")
+    @CachePut(key = "#key", unless = "#result == null")
     @Override
     public CaptchaEntity setCaptcha(String key, CaptchaEntity captcha) {
         return captcha;
     }
 
-    @Cacheable(key = "#key")
+    @Cacheable(key = "#key", unless = "#result == null")
     @Override
     public CaptchaEntity getCaptcha(String key) {
         return null;
