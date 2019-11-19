@@ -8,6 +8,7 @@ import com.github.qq120011676.ladybird.web.exception.RestfulExceptionHelper;
 import com.google.code.kaptcha.Producer;
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.google.code.kaptcha.util.Config;
+import org.springframework.boot.convert.DurationStyle;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +20,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.time.Duration;
 import java.time.ZonedDateTime;
 import java.util.Properties;
 import java.util.Set;
@@ -57,7 +57,7 @@ public class KaptchaController {
         String text = producerCustom.createText();
         CaptchaEntity captcha = new CaptchaEntity();
         captcha.setText(text);
-        captcha.setTimeout(StringUtils.hasText(timeout) ? Duration.parse(timeout) : this.captchaProperties.getTimeout());
+        captcha.setTimeout(StringUtils.hasText(timeout) ? DurationStyle.SIMPLE.parse(timeout) : this.captchaProperties.getTimeout());
         this.captchaService.setCaptcha(key, captcha);
         BufferedImage bi = producerCustom.createImage(text);
         try (ServletOutputStream out = response.getOutputStream()) {
