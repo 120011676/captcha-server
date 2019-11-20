@@ -1,0 +1,12 @@
+group 'com.github.120011676'
+version '0.0.1'
+
+sourceCompatibility = 1.8
+
+dependencies {
+    implementation 'org.jsoup:jsoup:latest.release'
+    implementation 'com.google.code.gson:gson:latest.release'
+    compileOnly 'org.projectlombok:lombok:latest.release'
+    annotationProcessor 'org.projectlombok:lombok:latest.release'
+    testImplementation 'commons-io:commons-io:latest.release'
+}
