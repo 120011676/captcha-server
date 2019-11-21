@@ -15,7 +15,7 @@ public class CaptchaClientTest {
 //        } else {
 //            System.out.println(captchaResultBytes + "--" + captchaResultBytes.getCode() + "--" + captchaResultBytes.getMessage());
 //        }
-        System.out.println(captchaClient.testKaptcha(key, text));
+        System.out.println(captchaClient.checkKaptcha(key, text));
         System.out.println(captchaClient.verifyKaptcha(key, text));
     }
 }

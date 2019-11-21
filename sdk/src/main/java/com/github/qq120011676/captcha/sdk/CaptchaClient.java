@@ -18,7 +18,7 @@ import java.util.Map;
 public class CaptchaClient {
     private String baseUrl;
     private String imageKaptchaUri = "/kaptcha/image";
-    private String testKaptchaUri = "/kaptcha/test";
+    private String checkKaptchaUri = "/kaptcha/check";
     private String verifyKaptchaUri = "/kaptcha/verify";
 
     public CaptchaClient(String baseUrl) {
@@ -58,8 +58,8 @@ public class CaptchaClient {
         return new Gson().fromJson(response.body(), CaptchaResultBytes.class);
     }
 
-    public CaptchaResult testKaptcha(String key, String text) throws IOException {
-        return this.testOrVerify(this.testKaptchaUri, key, text);
+    public CaptchaResult checkKaptcha(String key, String text) throws IOException {
+        return this.testOrVerify(this.checkKaptchaUri, key, text);
     }
 
     public CaptchaResult verifyKaptcha(String key, String text) throws IOException {

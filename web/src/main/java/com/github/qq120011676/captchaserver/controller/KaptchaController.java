@@ -66,8 +66,8 @@ public class KaptchaController {
         }
     }
 
-    @RequestMapping("test")
-    public boolean test(String key, String text) {
+    @RequestMapping("check")
+    public boolean check(String key, String text) {
         if (!StringUtils.hasText(key)) {
             throw this.restfulExceptionHelper.getRestfulRuntimeException("key_null_error");
         }
@@ -89,7 +89,7 @@ public class KaptchaController {
 
     @RequestMapping("verify")
     public boolean verify(String key, String text) {
-        boolean bol = test(key, text);
+        boolean bol = this.check(key, text);
         if (bol) {
             this.captchaService.cleanCaptcha(key);
         }

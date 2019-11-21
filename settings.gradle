@@ -6,4 +6,6 @@ include 'kaptcha-spring-boot-starter'
 include 'captcha-spring-boot-autoconfigure'
 include 'captcha-spring-boot-starter'
 include 'sdk'
+include 'sdk-spring-boot-autoconfigure'
+include 'sdk-spring-boot-starter'
 
